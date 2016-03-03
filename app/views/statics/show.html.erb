@@ -1,0 +1,30 @@
+<div id="permanent-div" data-turbolinks-permanent>
+  <p>
+    <strong>Permanent</strong>
+    <br/>
+    <%= form_tag static_path, remote: true, method: :patch do %>
+      <%= select_tag 'filter1', options_for_select(%w(A B C), cookies[:filter1]), class: 'filter' %>
+    <% end %>
+  </p>
+</div>
+<div id="non-permanent-div">
+  <p>
+    <strong>Non permanent</strong>
+    <br/>
+    <%= form_tag static_path, remote: true, method: :patch do %>
+      <%= select_tag 'filter2', options_for_select(%w(A B C), cookies[:filter2]), class: 'filter' %>
+    <% end %>
+  </p>
+</div>
+
+<p>
+  <%= link_to 'Trigger application visit', page2_static_path %>
+</p>
+
+<% if @page2 %>
+<p>
+  <strong>
+    Now click on back!
+  </strong>
+</p>
+<% end %>
