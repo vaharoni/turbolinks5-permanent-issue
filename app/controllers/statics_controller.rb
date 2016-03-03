@@ -1,12 +1,15 @@
 class StaticsController < ApplicationController
 
-  def page1
+  def show
+  end
+
+  def page_with_filters
+    @show_back = true
     render 'show'
   end
 
-  def page2
-    @page2 = true
-    render 'show'
+  def page_without_filters
+
   end
 
   def update

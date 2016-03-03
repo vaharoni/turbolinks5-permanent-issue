@@ -1,3 +1,20 @@
+<p>
+  <strong>
+    <% if @show_back %>
+      Now click on back and see that the data-turbolinks-permanent dropdown maintains it value and the other dropdown does not (good behavior).
+    <% else %>
+      The dropdowns below are recorded in cookies. <br/>
+      Change both dropdowns to a different value than the value loaded by page load. <br/>
+      Then perform an application visit using the links below:
+      <ul>
+        <li><%= link_to 'Second page with the dropdowns', page_with_filters_static_path %> (good behavior)</li>
+        <li><%= link_to 'Second page without the dropdowns', page_without_filters_static_path %> (bad behavior)</li>
+      </ul>
+    <% end %>
+  </strong>
+</p>
+
+
 <div id="permanent-div" data-turbolinks-permanent>
   <p>
     <strong>Permanent</strong>
@@ -17,14 +34,4 @@
   </p>
 </div>
 
-<p>
-  <%= link_to 'Trigger application visit', page2_static_path %>
-</p>
 
-<% if @page2 %>
-<p>
-  <strong>
-    Now click on back!
-  </strong>
-</p>
-<% end %>

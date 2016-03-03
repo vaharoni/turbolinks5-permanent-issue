@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # mount ActionCable.server => '/cable'
 
   resource :static do
-    get :page1
-    get :page2
+    get :page_with_filters
+    get :page_without_filters
   end
 end
